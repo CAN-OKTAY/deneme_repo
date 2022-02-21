@@ -3,9 +3,8 @@ package com.example.demo.Controller;
 import com.example.demo.Servis.MailServis;
 import com.example.demo.Servis.SmsServis;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "api/send")
@@ -26,5 +25,4 @@ public class SenderController {
     public String getSms(){
         return smsServis.getSms();
     }
-
 }

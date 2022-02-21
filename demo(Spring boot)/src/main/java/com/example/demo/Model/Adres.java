@@ -13,6 +13,9 @@ public class Adres {
     @Column(name = "openAdres")
     private String openAdres;
 
+    @Column(name = "town")
+    private String town;
+
     @Column(name = "country")
     private String country;
 
@@ -31,24 +34,16 @@ public class Adres {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getOpenAdres() {
         return openAdres;
-    }
-
-    public void setOpenAdres(String openAdres) {
-        this.openAdres = openAdres;
     }
 
     public String getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public String getTown() {
+        return town;
     }
 
     @Override
