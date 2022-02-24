@@ -20,9 +20,14 @@ public class AdresController {
         return adresServis.getAdres();
     }
 
+    @GetMapping(path = "/{id}")
+    public Adres getAdresById(@RequestParam int id){
+        return adresServis.getAdresById(id);
+    }
+
     @PostMapping
     public void saveAdres(@RequestBody Adres adres){
         adresServis.saveAdres(adres);
     }
-
+    
 }

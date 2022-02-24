@@ -19,4 +19,7 @@ public class AdresServis {
     public void saveAdres(Adres adres){
         adresRepository.save(adres);
     }
+    public Adres getAdresById(int id){
+        return adresRepository.getById(id);
+    }
 }
