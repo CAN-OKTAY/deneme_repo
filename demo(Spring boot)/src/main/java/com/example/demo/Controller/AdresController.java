@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "api/adres")
@@ -15,14 +16,14 @@ public class AdresController {
     @Autowired
     private AdresServis adresServis;
 
-    @GetMapping
+    @GetMapping(path ="adresAll")
     public List<Adres> getAdres(){
         return adresServis.getAdres();
     }
 
-    @GetMapping(path = "/{id}")
-    public Adres getAdresById(@RequestParam int id){
-        return adresServis.getAdresById(id);
+    @GetMapping(path = "")
+    public Optional<Adres> getAdresById(@RequestParam(name = "id") int id){
+        return adresServis.findById(id);
     }
 
     @PostMapping

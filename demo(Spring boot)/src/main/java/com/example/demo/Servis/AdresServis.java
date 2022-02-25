@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AdresServis {
@@ -19,7 +20,7 @@ public class AdresServis {
     public void saveAdres(Adres adres){
         adresRepository.save(adres);
     }
-    public Adres getAdresById(int id){
-        return adresRepository.getById(id);
+    public Optional<Adres> findById(int id){
+        return adresRepository.findById(id);
     }
 }
