@@ -30,6 +30,19 @@ public class Adres {
         this.openAdres = openAdres;
         this.country = country;
     }
+
+    public void setOpenAdres(String openAdres) {
+        this.openAdres = openAdres;
+    }
+
+    public void setTown(String town) {
+        this.town = town;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
     public int getId() {
         return id;
     }

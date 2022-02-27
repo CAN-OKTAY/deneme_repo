@@ -30,5 +30,10 @@ public class AdresController {
     public void saveAdres(@RequestBody Adres adres){
         adresServis.saveAdres(adres);
     }
+
+    @PutMapping(path = "updateAdres")
+    public  void updateAdresById(@RequestBody Adres adres,@RequestParam(name = "id")int id){
+        adresServis.updateAdres(adres,id);
+    }
     
 }
