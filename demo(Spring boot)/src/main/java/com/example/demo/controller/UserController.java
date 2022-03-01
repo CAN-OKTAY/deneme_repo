@@ -34,6 +34,4 @@ public class UserController {
     public void updateUserById(@RequestBody User user,@RequestParam(name = "id")int id){
         userService.updateUser(user,id);
     }
-
-
 }
