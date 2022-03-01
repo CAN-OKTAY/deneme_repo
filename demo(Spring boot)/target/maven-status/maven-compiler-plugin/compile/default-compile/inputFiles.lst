@@ -1,0 +1,12 @@
+/home/netmera/Desktop/CAN OKTAY/deneme_repo/demo(Spring boot)/src/main/java/com/example/demo/servis/UserService.java
+/home/netmera/Desktop/CAN OKTAY/deneme_repo/demo(Spring boot)/src/main/java/com/example/demo/controller/UserController.java
+/home/netmera/Desktop/CAN OKTAY/deneme_repo/demo(Spring boot)/src/main/java/com/example/demo/servis/AdresServis.java
+/home/netmera/Desktop/CAN OKTAY/deneme_repo/demo(Spring boot)/src/main/java/com/example/demo/controller/SenderController.java
+/home/netmera/Desktop/CAN OKTAY/deneme_repo/demo(Spring boot)/src/main/java/com/example/demo/repository/AdresRepository.java
+/home/netmera/Desktop/CAN OKTAY/deneme_repo/demo(Spring boot)/src/main/java/com/example/demo/repository/UserRepository.java
+/home/netmera/Desktop/CAN OKTAY/deneme_repo/demo(Spring boot)/src/main/java/com/example/demo/servis/SmsServis.java
+/home/netmera/Desktop/CAN OKTAY/deneme_repo/demo(Spring boot)/src/main/java/com/example/demo/servis/MailServis.java
+/home/netmera/Desktop/CAN OKTAY/deneme_repo/demo(Spring boot)/src/main/java/com/example/demo/model/Adres.java
+/home/netmera/Desktop/CAN OKTAY/deneme_repo/demo(Spring boot)/src/main/java/com/example/demo/model/User.java
+/home/netmera/Desktop/CAN OKTAY/deneme_repo/demo(Spring boot)/src/main/java/com/example/demo/controller/AdresController.java
+/home/netmera/Desktop/CAN OKTAY/deneme_repo/demo(Spring boot)/src/main/java/com/example/demo/DemoApplication.java
