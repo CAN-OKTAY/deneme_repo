@@ -25,14 +25,14 @@ public class UserService {
 
     public void updateUser(@NotNull User user, int id){
         Optional<User> userFromDB=userRepository.findById(id);
-        userFromDB.get().setUsername(user.getUsername());
-        userFromDB.get().setPassword(user.getPassword());
-        userRepository.save(userFromDB.get());
+        User userByid=userFromDB.get();
+        userByid.setUsername(user.getUsername());
+        userByid.setPassword(user.getPassword());
+        userRepository.save(userByid);
     }
 
     public List<User> getUserWithPagination(int beginPage){
-        beginPage=beginPage-1 ; //decreased  by 1 because
-        int skipRows=beginPage*2;//each page has 2 json field.
+        int skipRows=(beginPage-1)*2;//each page has to be only 2 json object(User).
         return userRepository.getUserWithPagination(skipRows);
     }
 

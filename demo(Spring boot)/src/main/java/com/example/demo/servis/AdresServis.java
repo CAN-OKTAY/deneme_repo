@@ -19,6 +19,11 @@ public class AdresServis {
         return adresRepository.findAll();
     }
 
+    public List<Adres> getAdresWithPagination(int beginPage){
+        int skipRows=(beginPage-1)*2; //each page has to be only 2 json object(Adres).
+        return adresRepository.getAdresWithPagination(skipRows);
+    }
+
     public void saveAdres(Adres adres){
         adresRepository.save(adres);
     }

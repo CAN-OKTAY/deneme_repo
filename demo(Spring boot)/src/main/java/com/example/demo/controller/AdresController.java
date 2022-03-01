@@ -15,12 +15,12 @@ public class AdresController {
     @Autowired
     private AdresServis adresServis;
 
-    @GetMapping(path ="adresAll")
-    public List<Adres> getAdres(){
-        return adresServis.getAdres();
-    }
+    @GetMapping(path ="/list")
+        public List<Adres> getAdresWithPagination(@RequestParam(name = "page") int page){
+            return adresServis.getAdresWithPagination(page);
+        }
 
-    @GetMapping(path = "")
+    @GetMapping
     public Optional<Adres> getAdresById(@RequestParam(name = "id") int id){
         return adresServis.findById(id);
     }
@@ -30,7 +30,7 @@ public class AdresController {
         adresServis.saveAdres(adres);
     }
 
-    @PutMapping(path = "updateAdres")
+    @PutMapping(path = "/updateAdres")
     public  void updateAdresById(@RequestBody Adres adres,@RequestParam(name = "id")int id){
         adresServis.updateAdres(adres,id);
     }
