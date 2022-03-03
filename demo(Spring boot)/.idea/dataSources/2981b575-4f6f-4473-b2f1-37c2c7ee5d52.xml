@@ -1043,6 +1043,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <user id="283" parent="1" name="root">
       <Host>localhost</Host>
     </user>
+<<<<<<< HEAD
+=======
     <table id="284" parent="277" name="adres">
       <Engine>MyISAM</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
@@ -1115,5 +1117,6 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <DataType>bigint|0s</DataType>
       <Position>1</Position>
     </column>
+>>>>>>> 5a8cde5a3a445faeb9bec0655bd613ccdd7b304a
   </database-model>
 </dataSource>
