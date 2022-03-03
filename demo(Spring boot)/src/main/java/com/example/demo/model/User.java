@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -16,15 +17,21 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @OneToMany(targetEntity = Adres.class,cascade = CascadeType.ALL)
+    @JoinColumn(referencedColumnName = "id")
+    private List<Adres> adres;
+
     public User() {
         this.id=0;
         this.username="";
         this.password="";
+        this.adres =null;
     }
-    public User(int id,String username,String password){
+    public User(int id, String username, String password, List<Adres> adres){
         this.id=id;
         this.username=username;
         this.password=password;
+        this.adres = adres;
     }
 
     public int getId() {
@@ -49,6 +56,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Adres> getAdres() {
+        return adres;
+    }
+
+    public void setAdres(List<Adres> adres) {
+        this.adres = adres;
     }
 
     @Override

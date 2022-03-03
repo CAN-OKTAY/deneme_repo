@@ -10,7 +10,7 @@ public class Adres {
     @GeneratedValue(strategy =GenerationType.SEQUENCE,generator = "adres_sequence")
     private int id;
 
-    @Column(name = "openAdres")
+    @Column(name = "open_adres")
     private String openAdres;
 
     @Column(name = "town")
