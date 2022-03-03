@@ -3,11 +3,8 @@ package com.example.demo.servis;
 import com.example.demo.model.Adres;
 import com.example.demo.model.User;
 import com.example.demo.repository.AdresRepository;
-<<<<<<< HEAD
-=======
+
 import com.example.demo.repository.UserRepository;
-import org.jetbrains.annotations.NotNull;
->>>>>>> 5a8cde5a3a445faeb9bec0655bd613ccdd7b304a
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
