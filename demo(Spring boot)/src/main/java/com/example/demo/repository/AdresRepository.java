@@ -11,7 +11,6 @@ import java.util.List;
 
 @Repository
 public interface AdresRepository extends JpaRepository<Adres,Integer> {
-
     @Query(value = "SELECT * FROM adres LIMIT 2 OFFSET :skipRows",nativeQuery = true)
     public List<Adres> getAdresWithPagination(@Param(value = "skipRows") int skipRows);
 }
