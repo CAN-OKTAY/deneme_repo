@@ -2,7 +2,6 @@ package com.example.demo.servis;
 
 import com.example.demo.model.Adres;
 import com.example.demo.repository.AdresRepository;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -34,7 +33,7 @@ public class AdresServis {
         return adresRepository.findById(id);
     }
 
-    public void updateAdres(@NotNull Adres adres, int id){
+    public void updateAdres(Adres adres, int id){
         Optional<Adres> adresFromDB=adresRepository.findById(id);
         if(adresFromDB.isPresent()) {
             Adres adres1 = adresFromDB.get();
