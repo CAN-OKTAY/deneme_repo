@@ -16,12 +16,12 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public Optional<User> findById(int id){
-        return userRepository.findById(id);
+    public User findById(int id){
+        return userRepository.findById(id).get();
     }
 
-    public List<User> getUserWithPagination(int beginPage){
-        int skipRows=(beginPage-1)*2;//each page has to be only 2 json object(User).
+    public List<User> getUserWithPagination(int page){
+        int skipRows=(page-1)*2;//each page has to be only 2 json object(User).
         return userRepository.getUserWithPagination(skipRows);
     }
 
