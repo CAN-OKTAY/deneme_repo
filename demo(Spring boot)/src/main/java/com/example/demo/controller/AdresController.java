@@ -25,9 +25,9 @@ public class AdresController {
         return adresServis.findById(id);
     }
 
-    @PostMapping
-    public void saveAdres(@RequestBody Adres adres){
-        adresServis.saveAdres(adres);
+    @PostMapping()
+    public void saveAdres(@RequestBody Adres adres,@RequestParam(name = "user_id")int user_id){
+        adresServis.saveAdres(adres,user_id);
     }
 
     @PutMapping(path = "/updateAdres")
