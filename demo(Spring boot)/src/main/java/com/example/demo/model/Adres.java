@@ -19,6 +19,10 @@ public class Adres {
     @Column(name = "country")
     private String country;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public Adres(){
         this.id=0;
         this.openAdres="";
@@ -57,6 +61,14 @@ public class Adres {
 
     public String getTown() {
         return town;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
