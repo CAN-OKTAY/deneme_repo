@@ -16,8 +16,8 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public Optional<User> findById(int id){
-        return userRepository.findById(id);
+    public User findById(int id){
+        return userRepository.findById(id).get();
     }
 
     public List<User> getUserWithPagination(int beginPage){

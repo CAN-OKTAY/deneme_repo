@@ -21,7 +21,7 @@ public class UserController {
     }
 
     @GetMapping
-    public Optional<User> getUserById(@RequestParam(name = "id") int id){
+    public User getUserById(@RequestParam(name = "id") int id){
         return  userService.findById(id);
     }
 

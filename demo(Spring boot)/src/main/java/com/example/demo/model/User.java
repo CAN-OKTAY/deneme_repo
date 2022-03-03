@@ -12,16 +12,15 @@ public class User {
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "user_sequence")
     private  int id;
 
-    @Column(name = "username")
     @NotNull
+    @Column(name = "username")
     private String username;
 
-    @Column(name = "password")
     @NotNull
+    @Column(name = "password")
     private String password;
 
-    @OneToMany(mappedBy ="user",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @NotNull
+    @OneToMany(mappedBy ="user_id",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Adres> adres;
 
     public User() {

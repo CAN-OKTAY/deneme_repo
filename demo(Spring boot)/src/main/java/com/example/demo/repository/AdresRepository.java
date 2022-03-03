@@ -1,6 +1,7 @@
 package com.example.demo.repository;
 
 import com.example.demo.model.Adres;
+import com.example.demo.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -14,3 +15,4 @@ public interface AdresRepository extends JpaRepository<Adres,Integer> {
     @Query(value = "SELECT * FROM adres LIMIT 2 OFFSET :skipRows",nativeQuery = true)
     public List<Adres> getAdresWithPagination(@Param(value = "skipRows") int skipRows);
 }
+
