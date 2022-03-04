@@ -1044,19 +1044,19 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
     </user>
     <table id="284" parent="277" name="adres">
-      <Engine>MyISAM</Engine>
+      <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <table id="285" parent="277" name="adres_sequence">
-      <Engine>MyISAM</Engine>
+      <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <table id="286" parent="277" name="user">
-      <Engine>MyISAM</Engine>
+      <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <table id="287" parent="277" name="user_sequence">
-      <Engine>MyISAM</Engine>
+      <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <column id="288" parent="284" name="id">
@@ -1076,42 +1076,47 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <DataType>varchar(255)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="292" parent="284" name="adres_id">
+    <column id="292" parent="284" name="adres_fk">
       <DataType>int|0s</DataType>
       <Position>5</Position>
     </column>
-    <index id="293" parent="284" name="FK7ied7lbm4tkie8o1bqrweukm2">
-      <ColNames>adres_id</ColNames>
+    <foreign-key id="293" parent="284" name="FKmxs1sf96r6cuj0r7tksn8c9j4">
+      <ColNames>adres_fk</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>user</RefTableName>
+    </foreign-key>
+    <index id="294" parent="284" name="FKmxs1sf96r6cuj0r7tksn8c9j4">
+      <ColNames>adres_fk</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="294" parent="284" name="PRIMARY">
+    <key id="295" parent="284" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="295" parent="285" name="next_val">
+    <column id="296" parent="285" name="next_val">
       <DataType>bigint|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="296" parent="286" name="id">
+    <column id="297" parent="286" name="id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="297" parent="286" name="password">
+    <column id="298" parent="286" name="password">
       <DataType>varchar(255)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="298" parent="286" name="username">
+    <column id="299" parent="286" name="username">
       <DataType>varchar(255)|0s</DataType>
       <Position>3</Position>
     </column>
-    <key id="299" parent="286" name="PRIMARY">
+    <key id="300" parent="286" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="300" parent="287" name="next_val">
+    <column id="301" parent="287" name="next_val">
       <DataType>bigint|0s</DataType>
       <Position>1</Position>
     </column>

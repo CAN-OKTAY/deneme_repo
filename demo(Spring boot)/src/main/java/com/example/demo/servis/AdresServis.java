@@ -18,8 +18,6 @@ public class AdresServis {
 
     @Autowired
     private AdresRepository adresRepository;
-    @Autowired
-    private UserRepository userRepository;
 
     public List<Adres> getAdres(){
         return adresRepository.findAll();
@@ -31,13 +29,7 @@ public class AdresServis {
     }
 
     public void saveAdres(Adres adres,int user_id){
-        Optional<User> user=userRepository.findById(user_id);
-        if(user.isPresent()) {
-            adres.setUser_id(user.get());
-            adresRepository.save(adres);
-        }else{
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"user_id do not mach with user(id)");
-        }
+
     }
 
     public Optional<Adres> findById(int id){

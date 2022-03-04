@@ -18,20 +18,18 @@ public class User {
     private String password;
 
     @OneToMany(targetEntity = Adres.class,cascade = CascadeType.ALL)
-    @JoinColumn(referencedColumnName = "id")
+    @JoinColumn(name = "adres_fk",referencedColumnName ="id")
     private List<Adres> adres;
 
     public User() {
         this.id=0;
         this.username="";
         this.password="";
-        this.adres =null;
     }
     public User(int id, String username, String password, List<Adres> adres){
         this.id=id;
         this.username=username;
         this.password=password;
-        this.adres = adres;
     }
 
     public int getId() {
