@@ -5,7 +5,6 @@ import com.example.demo.model.Adres;
 import com.example.demo.servis.AdresServis;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -21,13 +20,13 @@ public class AdresController {
         }
 
     @GetMapping
-    public Optional<Adres> getAdresById(@RequestParam(name = "id") int id){
+    public Adres getAdresById(@RequestParam(name = "id") int id){
         return adresServis.findById(id);
     }
 
     @PostMapping()
-    public void saveAdres(@RequestBody Adres adres,@RequestParam(name = "user_id")int user_id){
-        adresServis.saveAdres(adres,user_id);
+    public void saveAdres(@RequestBody Adres adres){
+
     }
 
     @PutMapping(path = "/updateAdres")

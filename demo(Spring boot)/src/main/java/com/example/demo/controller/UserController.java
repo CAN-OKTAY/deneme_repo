@@ -4,9 +4,7 @@ import com.example.demo.model.User;
 import com.example.demo.servis.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/api/users")
