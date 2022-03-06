@@ -6,6 +6,9 @@ import com.example.demo.repository.AdresRepository;
 
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -24,16 +27,15 @@ public class AdresServis {
     }
 
     public List<Adres> getAdresWithPagination(int page){
-        int skipRows=(page-1)*2; //each page has to be only 2 json object(Adres).
-        return adresRepository.getAdresWithPagination(skipRows);
+        return adresRepository.findAll((Pageable) PageRequest.of(page-1,2, Sort.by("country"))).getContent();
     }
 
     public void saveAdres(Adres adres,int user_id){
 
     }
 
-    public Optional<Adres> findById(int id){
-        return adresRepository.findById(id);
+    public Adres findById(int id){
+        return adresRepository.findById(id).get();
     }
 
     public void updateAdres(Adres adres, int id){
