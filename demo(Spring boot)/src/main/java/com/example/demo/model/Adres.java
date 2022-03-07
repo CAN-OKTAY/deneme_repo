@@ -1,11 +1,12 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.nio.MappedByteBuffer;
 
 @Entity
 @Table
-public class Adres {
+public class Adres{
     @Id
     @SequenceGenerator(name = "adres_sequence",sequenceName = "adres_sequence")
     @GeneratedValue(strategy =GenerationType.SEQUENCE,generator = "adres_sequence")
