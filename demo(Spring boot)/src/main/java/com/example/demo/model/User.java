@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
@@ -26,10 +27,12 @@ public class User {
         this.username="";
         this.password="";
     }
+
     public User(int id, String username, String password, List<Adres> adres){
         this.id=id;
         this.username=username;
         this.password=password;
+        this.adres=adres;
     }
 
     public int getId() {
