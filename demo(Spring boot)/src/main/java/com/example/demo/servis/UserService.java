@@ -2,9 +2,7 @@ package com.example.demo.servis;
 
 import com.example.demo.model.User;
 import com.example.demo.repository.UserRepository;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -33,7 +31,7 @@ public class UserService {
         userRepository.save(newUser);
     }
 
-    public void updateUser(@NotNull User user, int id){
+    public void updateUser(User user, int id){
         Optional<User> userFromDB=userRepository.findById(id);
         if(userFromDB.isPresent()) {
             User userUpdate = userFromDB.get();
