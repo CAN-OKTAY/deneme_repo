@@ -17,7 +17,6 @@ public class User {
 
     @Column(name = "password")
     private String password;
-
     @OneToMany(targetEntity = Adres.class,cascade = CascadeType.ALL)
     @JoinColumn(name = "adres_fk",referencedColumnName ="id")
     private List<Adres> adres;

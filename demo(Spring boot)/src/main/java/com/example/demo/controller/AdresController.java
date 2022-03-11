@@ -14,24 +14,24 @@ public class AdresController {
     @Autowired
     private AdresServis adresServis;
 
-    @GetMapping(path ="/list")
+    @GetMapping(path ="/getlist")
         public List<Adres> getAdresWithPagination(@RequestParam(name = "page") int page){
             return adresServis.getAdresWithPagination(page);
         }
 
-    @GetMapping
+    @GetMapping(path = "/get")
     public Adres getAdresById(@RequestParam(name = "id") int id){
         return adresServis.findById(id);
     }
 
-    @PostMapping()
+    @PostMapping(path = "/addAdres")
     public void saveAdres(@RequestBody Adres adres){
 
     }
 
     @PutMapping(path = "/updateAdres")
-    public  void updateAdresById(@RequestBody Adres adres,@RequestParam(name = "id")int id){
-        adresServis.updateAdres(adres,id);
+    public  void updateAdresById(@RequestBody Adres adres,@RequestParam(name = "adres_id")int adres_id){
+        adresServis.updateAdres(adres,adres_id);
     }
     
 }

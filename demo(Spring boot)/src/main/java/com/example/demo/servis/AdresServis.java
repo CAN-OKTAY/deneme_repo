@@ -6,6 +6,7 @@ import com.example.demo.repository.AdresRepository;
 
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -22,10 +23,6 @@ public class AdresServis {
     @Autowired
     private AdresRepository adresRepository;
 
-    public List<Adres> getAdres(){
-        return adresRepository.findAll();
-    }
-
     public List<Adres> getAdresWithPagination(int page){
         return adresRepository.findAll((Pageable) PageRequest.of(page-1,2, Sort.by("country"))).getContent();
     }
@@ -38,8 +35,8 @@ public class AdresServis {
         return adresRepository.findById(id).get();
     }
 
-    public void updateAdres(Adres adres, int id){
-        Optional<Adres> adresFromDB=adresRepository.findById(id);
+    public void updateAdres(Adres adres, int adres_id){
+        Optional<Adres> adresFromDB=adresRepository.findById(adres_id);
         if(adresFromDB.isPresent()) {
             Adres adres1 = adresFromDB.get();
             adres1.setOpenAdres(adres.getOpenAdres());
@@ -48,7 +45,7 @@ public class AdresServis {
             adresRepository.save(adres1);
         }
         else{
-            throw  new ResponseStatusException(HttpStatus.BAD_REQUEST,"Adres-ID which is wanted to update not found");
+            throw  new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
     }
 }

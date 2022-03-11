@@ -13,17 +13,17 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping(path = "/list")
+    @GetMapping(path = "/getList")
     public List<User> getUserWithPagination(@RequestParam(name = "page")int page){
         return userService.getUserWithPagination(page);
     }
 
-    @GetMapping
+    @GetMapping(path = "/get")
     public User getUserById(@RequestParam(name = "id") int id){
         return  userService.findById(id);
     }
 
-    @PostMapping
+    @PostMapping(path = "/addUser")
     public void addUser(@RequestBody User user){
         userService.addUser(user);
     }
@@ -31,5 +31,10 @@ public class UserController {
     @PutMapping(path = "/updateUser")
     public void updateUserById(@RequestBody User user,@RequestParam(name = "id")int id){
         userService.updateUser(user,id);
+    }
+
+    @DeleteMapping(path = "/deleteUser")
+    public void deleteUserById(@RequestParam(name = "id")int id){
+        userService.deleteUser(id);
     }
 }
