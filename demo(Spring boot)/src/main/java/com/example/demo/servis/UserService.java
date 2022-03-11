@@ -45,4 +45,14 @@ public class UserService {
            throw  new ResponseStatusException(HttpStatus.BAD_REQUEST,"User-ID which is wanted to update not found.");
         }
     }
+
+    public void deleteUser(int id){
+        Optional<User> userFormDB=userRepository.findById(id);
+        if(userFormDB.isPresent()){
+            userRepository.deleteById(id);
+        }
+        else{
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT,"User-ID which is wanted to delete not found");
+        }
+    }
 }
